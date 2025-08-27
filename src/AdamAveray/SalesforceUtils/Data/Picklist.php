@@ -14,7 +14,7 @@ class Picklist
      * @param array|null $values The initial values for the picklist
      * @see ::fromString
      */
-    public function __construct(array $values = null)
+    public function __construct(?array $values = null)
     {
         $this->values = (array) $values;
     }

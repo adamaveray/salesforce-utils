@@ -20,7 +20,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
      * @param array|null $methods
      * @return MockObject|ClientInterface
      */
-    private function getClient(array $methods = null): ClientInterface
+    private function getClient(?array $methods = null): ClientInterface
     {
         $builder = $this->getMockBuilder(ClientInterface::class);
         if ($methods !== null) {

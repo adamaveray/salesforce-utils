@@ -13,17 +13,17 @@ interface QueryInterface
      * @param array|null $args Arguments to bind before executing
      * @return RecordIterator
      */
-    public function query(array $args = null): RecordIterator;
+    public function query(?array $args = null): RecordIterator;
 
     /**
      * @param array|null $args Arguments to bind before executing
      * @return QueryResult[]
      */
-    public function queryAll(array $args = null): array;
+    public function queryAll(?array $args = null): array;
 
     /**
      * @param array|null $args Arguments to bind before executing
      * @return SObject|null The first result from the query, or null if no results
      */
-    public function queryOne(array $args = null): ?SObject;
+    public function queryOne(?array $args = null): ?SObject;
 }

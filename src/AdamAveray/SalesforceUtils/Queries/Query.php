@@ -24,9 +24,9 @@ class Query implements QueryInterface
      * @param array|null $globalArgs Global arguments to bind to every execution
      */
     public function __construct(
-        ClientInterface $client,
-        string $query,
-        array $globalArgs = null
+      ClientInterface $client,
+      string $query,
+      ?array $globalArgs = null
     ) {
         $this->client = $client;
         $this->rawQuery = $query;
@@ -70,13 +70,13 @@ class Query implements QueryInterface
     }
 
     /** {@inheritdoc} */
-    public function query(array $args = null): RecordIterator
+    public function query(?array $args = null): RecordIterator
     {
         return $this->client->rawQuery($this->build($args));
     }
 
     /** {@inheritdoc} */
-    public function queryAll(array $args = null): array
+    public function queryAll(?array $args = null): array
     {
         // Phpforce library's `->queryAll` method is incorrectly identical to `->query` - manually convert to array
         $iterator = $this->client->rawQuery($this->build($args));
@@ -84,7 +84,7 @@ class Query implements QueryInterface
     }
 
     /** {@inheritdoc} */
-    public function queryOne(array $args = null): ?SObject
+    public function queryOne(?array $args = null): ?SObject
     {
         $result = $this->query($args);
         if (count($result) === 0) {
@@ -98,7 +98,7 @@ class Query implements QueryInterface
      * @return string The complete SOQL query with bound arguments
      * @throws \OutOfBoundsException An expected query parameter was not provided in $args
      */
-    public function build(array $args = null): string
+    public function build(?array $args = null): string
     {
         $args = array_merge($this->globalArgs, (array) $args);
 

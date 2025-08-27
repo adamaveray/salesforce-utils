@@ -24,7 +24,7 @@ class ClientBuilderTest extends \PHPUnit\Framework\TestCase
      * @covers ::<!public>
      * @dataProvider buildDataProvider
      */
-    public function testBuild(LoggerInterface $log = null): void
+    public function testBuild(?LoggerInterface $log = null): void
     {
         $username = 'username';
         $password = 'password';

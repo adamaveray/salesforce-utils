@@ -18,7 +18,7 @@ class WriterTest extends \PHPUnit\Framework\TestCase
      * @param ClientInterface|null $client
      * @return Writer
      */
-    private function getWriter(ClientInterface $client = null): Writer
+    private function getWriter(?ClientInterface $client = null): Writer
     {
         return new Writer($client ?? $this->getClient());
     }
@@ -27,7 +27,7 @@ class WriterTest extends \PHPUnit\Framework\TestCase
      * @param array|null $methods
      * @return MockObject|ClientInterface
      */
-    private function getClient(array $methods = null): ClientInterface
+    private function getClient(?array $methods = null): ClientInterface
     {
         $builder = $this->getMockBuilder(ClientInterface::class);
         if ($methods !== null) {

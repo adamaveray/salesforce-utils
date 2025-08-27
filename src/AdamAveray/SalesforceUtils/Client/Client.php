@@ -23,7 +23,7 @@ class Client extends \Phpforce\SoapClient\Client implements ClientInterface
     /** {@inheritdoc} */
     public function prepare(
         string $query,
-        array $globalArgs = null
+        ?array $globalArgs = null
     ): QueryInterface {
         return new Query($this, $query, $globalArgs);
     }
@@ -39,7 +39,7 @@ class Client extends \Phpforce\SoapClient\Client implements ClientInterface
      * @param array|null $args Arguments to bind to the query
      * @return \Phpforce\SoapClient\Result\RecordIterator
      */
-    public function query($query, array $args = null)
+    public function query($query, ?array $args = null)
     {
         if (!$query instanceof QueryInterface) {
             $query = $this->prepare($query);
@@ -52,7 +52,7 @@ class Client extends \Phpforce\SoapClient\Client implements ClientInterface
      * @param array|null $args Arguments to bind to the query
      * @return \Phpforce\SoapClient\Result\QueryResult[]
      */
-    public function queryAll($query, array $args = null)
+    public function queryAll($query, ?array $args = null)
     {
         if (!$query instanceof QueryInterface) {
             $query = $this->prepare($query);
@@ -61,7 +61,7 @@ class Client extends \Phpforce\SoapClient\Client implements ClientInterface
     }
 
     /** {@inheritdoc} */
-    public function queryOne($query, array $args = null): ?SObject
+    public function queryOne($query, ?array $args = null): ?SObject
     {
         if (!$query instanceof QueryInterface) {
             $query = $this->prepare($query);

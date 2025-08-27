@@ -231,7 +231,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         string $method,
         array $expectedArgs,
         array $callArgs,
-        string $oneMethod = null
+        ?string $oneMethod = null
     ): void {
         $oneMethod = $oneMethod ?? $method . 'One';
         $mirror = new \ReflectionMethod(ClientInterface::class, $oneMethod);

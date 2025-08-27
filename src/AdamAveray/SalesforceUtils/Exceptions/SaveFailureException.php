@@ -13,7 +13,7 @@ class SaveFailureException extends \RuntimeException
      * @param SaveResult $result
      * @param \Throwable|null $previous
      */
-    public function __construct(SaveResult $result, \Throwable $previous = null)
+    public function __construct(SaveResult $result, ?\Throwable $previous = null)
     {
         $this->result = $result;
         $message = 'Save failure: ' . $result->getId();

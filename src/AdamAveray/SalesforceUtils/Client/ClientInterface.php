@@ -31,8 +31,8 @@ interface ClientInterface extends \Phpforce\SoapClient\ClientInterface
      * @return QueryInterface
      */
     public function prepare(
-        string $query,
-        array $globalArgs = null
+      string $query,
+      ?array $globalArgs = null
     ): QueryInterface;
 
     /**
@@ -40,7 +40,7 @@ interface ClientInterface extends \Phpforce\SoapClient\ClientInterface
      * @param array|null $args Arguments to bind to the query
      * @return SObject|null
      */
-    public function queryOne($query, array $args = null): ?SObject;
+    public function queryOne($query, ?array $args = null): ?SObject;
 
     /**
      * @param SObject $object The object to update
