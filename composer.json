@@ -3,7 +3,7 @@
   "description": "A collection of utilities to make interacting with the Phpforce Salesforce SOAP library easier",
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/adamaveray/salesforce-utils",
+  "homepage": "https://codeberg.org/adamaveray/salesforce-utils",
   "authors": [
     {
       "name": "Adam Averay",
